@@ -104,7 +104,7 @@ export async function main(ns) {
       serverName = `pserv-${serverNum}`;
     } while (ns.serverExists(serverName));
 
-    const success = ns.purchaseServer(serverName, ram);
+    const success = ns.cloud.purchaseServer(serverName, ram);
     if (success) {
       ns.tprint(`✓ Purchased ${serverName} (${ram}GB) - ${formatMoney(ns, cost, "$0.00a")}`);
       purchased++;
